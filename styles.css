@@ -1,0 +1,63 @@
+body {
+  display: grid;
+  place-items: center;
+  height: 100dvh;
+  background-color: #1b1b1b;
+}
+
+button {
+  padding: 10px 50px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  background-color: rgb(10, 129, 221);
+  color: #fff;
+  font-size: 20px;
+  transition-duration: 0.5s;
+  &:hover,
+  &:focus {
+    background-color: rgb(0, 208, 255);
+    color: #000;
+    border: 2px solid rgb(10, 129, 221);
+  }
+}
+
+[popover] {
+  width: 50dvw;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  background-color: rgb(10, 129, 221);
+  color: #fff;
+  padding: 12px;
+  transition: translate 0.7s ease-in-out,
+    display 0.7s ease-in-out allow-discrete;
+  translate: 0 -100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.close-popover-btn {
+  background-color: #900;
+  color: #fff;
+  &:hover,
+  &:focus {
+    background-color: rgb(233, 75, 88);
+    color: #fff;
+    border: 2px solid #900;
+  }
+}
+
+[popover]:popover-open {
+  translate: 0 -20dvh;
+}
+
+[popover]::backdrop {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+@starting-style {
+  [popover]:popover-open {
+    translate: 0 -100dvh;
+  }
+}
